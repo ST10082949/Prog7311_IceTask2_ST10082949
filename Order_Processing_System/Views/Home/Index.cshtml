@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Cafe Bliss";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> <!-- Path for your custom CSS -->
+    <title>@ViewData["Title"]</title>
+</head>
+<body class="bg-light">
+    <header class="bg-success text-white text-center py-5">
+        <h1 class="display-4">Welcome to Cafe Bliss</h1>
+        <p class="lead">Your cozy corner for the best coffee and treats in town!</p>
+        <a href="@Url.Action("Index", "Order")" class="btn btn-light btn-lg">Explore Our Products</a>
+    </header>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="font-weight-bold">Why You'll Love Us</h2>
+                <p>
+                    At Cafe Bliss, we serve freshly brewed coffee and delicious pastries made with love.
+                    Whether you’re stopping by for a quick coffee on the go or looking to relax with friends, our cozy ambiance is perfect for every occasion.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/images/coffee.jpg" class="card-img-top" alt="Coffee" />
+                    <div class="card-body">
+                        <h5 class="card-title">Freshly Brewed Coffee</h5>
+                        <p class="card-text">Enjoy a rich and aromatic coffee experience, sourced from the finest beans.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/images/pastry.jpg" class="card-img-top" alt="Pastry" />
+                    <div class="card-body">
+                        <h5 class="card-title">Delicious Pastries</h5>
+                        <p class="card-text">Our pastries are freshly baked every day to satisfy your sweet cravings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="~/images/cafe.jpg" class="card-img-top" alt="Cafe Ambiance" />
+                    <div class="card-body">
+                        <h5 class="card-title">Cozy Atmosphere</h5>
+                        <p class="card-text">Relax and enjoy your time in our comfortable and welcoming environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

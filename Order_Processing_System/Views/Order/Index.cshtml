@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Order Products";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> <!-- Path for your custom CSS -->
+    <title>@ViewData["Title"]</title>
+</head>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif; /* Clean, modern font for the body */
+    }
+
+    .card {
+        border: none; /* Remove card border for sleek appearance */
+    }
+
+    .card-title {
+        font-weight: bold; /* Emphasize product titles */
+    }
+
+    .form-check-input {
+        margin-left: 3rem; /* Space between the checkbox and the label */
+    }
+
+    .btn-primary {
+        background-color: #28a745; /* Custom color for button */
+        border-color: #28a745; /* Match button border with color */
+    }
+</style>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Order Products</h2>
+        <form asp-action="PlaceOrder" method="post">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">Price: @product.Price.ToString("C")</p>
+                                <input type="checkbox" name="Products" value="@product.Id" class="form-check-input" />
+                                <label class="form-check-label">Select</label>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+</html>
